@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pythondockerrepo
-        image: randacr.azurecr.io/cyberslot/pythondockerrepo:#{Build.BuildId}#
+        image: randacr.azurecr.io/cyberslot/azurepipelineaks:#{Build.BuildId}#
         ports:
         - containerPort: 5000
 # service type loadbalancer       
