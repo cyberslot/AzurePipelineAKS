@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "randaks-77e9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "randaks-77e9"
+  template:
+    metadata:
+      labels:
+        app: "randaks-77e9"
+    spec:
+      containers:
+        - name: "randaks-77e9"
+          image: "contpewyyyte6i4yw.azurecr.io/randaks"
+          ports:
+          - containerPort: 5000
