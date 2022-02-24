@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pythondockerrepo
-        image: contpewyyyte6i4yw.azurecr.io/cyberslot/randaks:#{Build.BuildId}#
+        image: contpewyyyte6i4yw.azurecr.io/cyberslot/azurepipelineaks:#{Build.BuildId}#
 #         image: contpewyyyte6i4yw.azurecr.io/cyberslot/azurepipelineaks:latest
         ports:
         - containerPort: 5000
