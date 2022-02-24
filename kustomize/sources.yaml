@@ -1,0 +1,16 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  annotations:
+    reconcile.fluxcd.io/requestedAt: "2022-02-24T16:56:27.246911112+02:00"
+  name: pythonapp-latest
+  namespace: flux-system
+spec:
+  gitImplementation: go-git
+  interval: 3m0s
+  ref:
+    branch: master
+  timeout: 1m0s
+  url: https://github.com/cyberslot/AzurePipelineAKS
+
