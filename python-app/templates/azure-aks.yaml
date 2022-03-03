@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-python-deployment
+  namespace: {{ default "default" .Release.Namespace }}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-python-app
+  template:
+    metadata:
+      labels:
+        app: my-python-app
+    spec:
+      containers:
+      - name: pythondockerrepo
+        # image: contpewyyyte6i4yw.azurecr.io/cyberslot/azurepipelineaks:#{Build.BuildId}#
+        image: {{ .Values.image.registry }}/{{ .Values.image.name }}:{{ default "latest" .Values.image.tag }}
+        ports:
+        - containerPort: 5000
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-python-app-svc
+  namespace: {{ default "default" .Release.Namespace }}
+spec:
+  selector:
+    app: my-python-app
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer

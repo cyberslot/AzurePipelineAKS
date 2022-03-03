@@ -1,0 +1,4 @@
+image:
+  registry: contpewyyyte6i4yw.azurecr.io/cyberslot/
+  name: azurepipelineaks
+  tag: latest
